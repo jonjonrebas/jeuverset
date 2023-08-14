@@ -211,36 +211,6 @@ function shuffle(array) {
         }
     }
 }
-let currentTouchElement = null;
-let currentTouchStartY = 0;
-
-userVersePartsContainer.addEventListener('touchstart', (event) => {
-  currentTouchElement = event.target;
-  currentTouchStartY = event.touches[0].clientY;
-});
-
-userVersePartsContainer.addEventListener('touchmove', (event) => {
-  if (currentTouchElement) {
-    event.preventDefault();
-    const touchY = event.touches[0].clientY;
-    const movementY = touchY - currentTouchStartY;
-    currentTouchElement.style.transform = `translateY(${movementY}px)`;
-  }
-});
-
-userVersePartsContainer.addEventListener('touchend', (event) => {
-  if (currentTouchElement) {
-    const touchY = event.changedTouches[0].clientY;
-    const targetElement = document.elementFromPoint(event.changedTouches[0].clientX, touchY);
-    const targetIndex = Array.from(userVersePartsContainer.children).indexOf(targetElement.closest('.verse-part'));
-
-    currentTouchElement.style.transform = ''; // Réinitialiser la transformation
-    userVersePartsContainer.insertBefore(currentTouchElement, userVersePartsContainer.children[targetIndex]);
-    currentTouchElement = null;
-    currentTouchStartY = 0;
-  }
-});
-
 nextVerseButton.addEventListener('click', () => {
     const userParts = Array.from(userVersePartsContainer.querySelectorAll('.verse-part')); // Utiliser userVersePartsContainer
     const isCorrect = userParts.every((partElement, index) => partElement.dataset.originalIndex == index);
