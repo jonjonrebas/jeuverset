@@ -17,7 +17,7 @@ const levels = [
   [
     { parts: ["La crainte de l'Éternel", "est le commencement", "de la sagesse."], reference: "Proverbes 9:10" },
     { parts: ["Car mes pensées ne sont pas", "vos pensées,", "Et vos voies ne sont pas", "mes voies, dit l'Éternel."], reference: "Ésaïe 55:8" },
-    { parts: ["L'herbe sèche,", "la fleur tombe,", "Mais la parole", "de notre Dieu subsiste éternellement."], reference: "Ésaïe 40:8" },
+    { parts: ["L'herbe sèche,", "la fleur tombe,", "mais la parole", "de notre Dieu subsiste éternellement."], reference: "Ésaïe 40:8" },
   ],
   // Niveau 3
   [
